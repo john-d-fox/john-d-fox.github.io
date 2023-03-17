@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Installing R and RStudio</title>
+
+<style type="text/css">
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+a img { 
+	border: none;
+}
+
+a:link {
+	color: #42413C;
+	text-decoration: underline; 
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; 
+}
+
+
+.header {
+	background: #8888FF;
+}
+
+
+.content {
+
+	padding: 10px 0;
+}
+
+.footer {
+	padding: 10px 0;
+	background: #8888FF;
+}
+
+.fltrt {  
+	float: right;
+	margin-left: 8px;
+}
+.fltlft {
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.typewriterFont {
+	font-family: Courier New, Courier, monospace;
+}
+h1 {
+	color: #00F;
+}
+.blueFont {
+	color: #00F;
+}
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#" class="header"><img src="AR3-cover.jpg" alt="Insert Logo Here" name="Insert_logo" width="150" height="225" id="Insert_logo" style="background: #8888FF; display:block;" /></a> 
+   </div>
+  <div class="content">
+    <h1>Installing R and RStudio</h1>
+    <p>R and RStudio are both free, open-source software, available for all commonly used operating systems, including Windows, Mac OS X, and Linux systems. R and RStudio install in the standard manner on each of these systems. System-specific instructions for installing R are given below. Regardless of your operating system, you should install R before installing RStudio.</p>
+    <p>Please read and follow these instructions carefully. Installation assistance will also be availabile on-site immediately prior to the workshop.</p>
+    <h2 class="blueFont">Installing R on Windows    </h2>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Visit the <a href="http://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) and select a mirror site near you; a list of <a href="http://cran.r-project.org/mirrors.html">CRAN mirrors</a> appears at the upper left of the CRAN home page. For example, if you are at Berkeley, select the <a href="http://cran.cnr.berkeley.edu/">Berkeley mirror</a>. Click on the link <em>Download R for Windows</em>, which appears near the top of the page; then click on <em>install R for the first time</em>, and subsequently on <em>Download R 2.15.0 for Windows</em> (or whatever is the current version of R). Once it is downloaded, double-click on the R installer. You may take all of the defaults, but I suggest that you make the following modifications:</p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Instead of installing R in the standard location, <span class="typewriterFont">C:\Program Files\R\R-2.15.0</span>, I suggest that you use <span class="typewriterFont">C:\R\R-2.15.0</span>. This will allow you to install packages without running R with administrator privileges and will avoid problems that sometimes occur when there are spaces in paths.    </p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />In the <em>Startup options</em> screen, select <em>Yes (customized startup)</em>. Then select the <em>SDI</em> (single-document interface) in preference to the default <em>MDI</em> (multiple-document interface); feel free to make other changes, but you may take all the remaining defaults.</p>
+    <h3 class="blueFont">Building Packages Under Windows (Optional)</h3>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />If you wish to build packages, you will have to install some additional software and properly configure your Windows system. You do not have to be able to <em>build</em> R packages in order to install pre-built Windows binary packages from CRAN, so these steps are unnecessary unless you plan to write your own packages.</p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Click on the <em>Rtools</em> link on the <em>R for Windows</em> CRAN page. Download the current version of the Rtools installer and run it. You may take all of the other defaults, but do allow the Rtools installer to modify your system path, by checking the box to edit the system path. Add <span class="typewriterFont">c:\R\R-2.15.0\bin;</span> to the path (assuming that you installed R in the location that I suggested), after the items added by the Rtools installer (i.e., after <span class="typewriterFont">c:\Rtools\gcc-4.6.3\bin</span>). Type this location carefully, including the terminating semicolon -- you don't want to mess up your path.</p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />If you want to be able to build PDF help files, download and install the <a href="http://www.miktex.org/">MiKTeX</a> LaTeX system; there is also a link to MiKTeX on the <em>Building R for Windows</em> page. Installing MiKTeX  will also allow you to create Sweave documents in RStudio.</p>
+    <h2 class="blueFont">Installing R on Mac OS X</h2>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Visit the <a href="http://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) and select a mirror site near you; a list of <a href="http://cran.r-project.org/mirrors.html">CRAN mirrors</a> appears at the upper left of the CRAN home page. For example, if you are at Berkeley, select the <a href="http://cran.cnr.berkeley.edu/">Berkeley mirror</a>. Click on the link <em>Download R for MacOS X</em>, which appears near the top of the page; then click on <em>R-2.15.0.pkg (latest version)</em> (or whatever is the current version of R). Once it is downloaded, double-click on the R installer. You may take all of the defaults.</p>
+    <h3 class="blueFont">Building Packages Under Mac OS X (Optional)</h3>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />To build R packages, you must install the Apple Xcode developer tools. For Mac OS X 10.7 (Lion), you can install Xcode for free from the App Store. For earlier versions of Mac OS X, Xcode can be installed from your system DVD or downloaded from the Apple developer website. You do not need Xcode to install pre-built Mac OS X binary packages from CRAN, so this step is unnecessary unless you plan to write your own packages.</p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Some R packages include Fortran code; to build such packages, you will have to install a Fortran compiler. You do not need the Fortran compiler to build most packages, nor to install pre-built Mac OS X binary packages from CRAN. Click on the <em>tools</em> link on the <em>R for Mac OS X</em> page, and  click on the link for <em>gfortran-4.2.3.dmg</em>. Double-click on this file once the download is complete; and then double-click on the installer,<em> gfortran.pkg</em>. Complete the installation.</p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />If you want to be able to build PDF help files, download and install the <a href="http://www.tug.org/mactex/2011/">MacTeX</a> LaTeX system.  Installing MacTeX  will also allow you to create Sweave documents in RStudio.</p>
+    <h2 class="blueFont">Installing R on Linux Systems</h2>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Visit the <a href="http://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) and select a mirror site near you; a list of <a href="http://cran.r-project.org/mirrors.html">CRAN mirrors</a> appears at the upper left of the CRAN home page. For example, if you are at Berkeley, select the <a href="http://cran.cnr.berkeley.edu/">Berkeley mirror</a>. Click on the link <em>Download R for Linux</em>, which appears near the top of the page. R is available for several Linux distributions (Debian, RedHat, SUSE, and Ubuntu)<em></em>; select your distribution, and proceed as directed. </p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />If you have a Linux or Unix system that's not compatible with one of these distributions, you will have to compile R from source code; the <a href="http://cran.r-project.org/doc/FAQ/R-FAQ.html#How-can-R-be-installed-_0028Unix_002dlike_0029">procedure for doing so</a> is is described in the R FAQ (frequently asked questions) list.</p>
+    <h2 class="blueFont">Installing RStudio</h2>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Go to the <a href="http://www.rstudio.org/">RStudio home page</a> and click on the<a href="http://www.rstudio.org/download/"><em> Download RStudio</em></a> button at the upper right; then click on <a href="http://www.rstudio.org/download/desktop"><em>Download RStudio Desktop</em></a>. The RStudio website should detect your operating system (Windows, Mac OS X, or Linux); click on the link for the current release of RStudio for your system. </p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Once it is downloaded, run the RStudio installer and take all of the defaults: In Windows, double-click on the RStudio installer to start the installation; in Mac OS X, double-click on the downloaded  RStudio disk-image file, and drag the <em>RStudio</em> icon to the <em>Applications</em> folder. </p>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />When you first run RStudio, it should detect your R installation and start the R 2.15.0 console. To configure RStudio to your taste, select <em>Tools -&gt; Options</em> (Windows) or <em>RStudio -&gt; Preferences</em> (Mac OS X) from the RStudio menus. If you encounter difficulties, consult the <a href="http://support.rstudio.org/help/kb/troubleshooting/troubleshooting-guide-using-rstudio">RStudio troubleshooting guide</a>.</p>
+    <h2 class="blueFont">Installing R Packages for the Workshop</h2>
+    <p><img src="blueball.gif" width="14" height="14" alt="bullet" />Once you have installed R and RStudio, you can install additional packages required for the lectures by typing the following command at the  <span class="typewriterFont">&gt;</span> command prompt in the R Console (and pressing the <em>Enter</em> or <em>return</em> key):</p>
+    <p class="typewriterFont">install.packages(c(&quot;car&quot;, &quot;effects&quot;))</p>
+    <p>You will be prompted to select a CRAN mirror site. Alternatively, you can install packages from the RStudio <em>Packages</em> tab.  </p>
+  </div>
+  <div class="footer">
+    <p>Last modified: 12 June 2012 by J. Fox &lt;<a href="mailto::jfox@mcmaster.ca">jfox AT mcmaster.ca</a>&gt;</p>
+</div>
+</div>
+</body>
+</html>
