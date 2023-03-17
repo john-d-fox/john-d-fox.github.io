@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Applied Regression 3E</title>
+    <style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+a img { 
+}
+
+a:link {
+	color: #000;
+	text-decoration: underline; 
+}
+
+a:visited {
+	color: #333;
+	text-decoration: underline;
+}
+
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+.container {
+	width: auto;
+	background: #FFF; 
+	color: #000;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background-color: #CCC;
+	color: #000;
+}
+.color-dark-blue {
+	color: #009;
+}
+
+.content {
+	padding: 10px 0;
+	color: #FFF;
+	background-color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	color: #000;
+	background-color: #CCC;
+}
+
+.fltrt {  
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { 
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.dark-purple {
+	color: #5B00B7;
+}
+black-color {
+	color: #000;
+}
+.black-color {
+	color: #000;
+}
+.dark-green-color {
+	color: #063;
+}
+.verdana-font {
+	font-family: Verdana, Geneva, sans-serif;
+}
+-->
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="color-dark-blue" align="center"><span
+            class="dark-purple"><span class="dark-purple"><span
+                class="dark-green-color"><span class="verdana-font">Applied
+                  Regression Analysis and Generalized Linear Models,
+                  Third Edition: Data Sets</span></span></span></span></h1>
+        <h2 class="black-color" align="center"><span
+            class="verdana-font">John Fox</span></h2>
+        <h3 class="dark-green-color" align="center">Sage Publications
+          (2016)</h3>
+        <p align="center">&nbsp; </p>
+        <div style="text-align: left;"><span style="font-weight: bold;"></span>
+          <!-- end .header --></div>
+      </div>
+      All data sets are ascii (plain-text) files; the first line of the
+      file supplies variable names (excluding the observation name or
+      number, which, in data sets in which it is present, is the first
+      entry in each subsequent line); missing data are encoded with the
+      character string NA. Descriptions of the data sets are supplied as
+      PDF (portable document format) files.
+      <div class="content">
+        <table style="text-align: left; width: 100%;" cellspacing="2"
+          cellpadding="2" border="1">
+          <tbody>
+            <tr>
+              <td class="black-color" style="font-weight: bold;"><big>Data
+                  Set</big></td>
+              <td class="black-color" style="font-weight: bold;"><big>Data
+                  File</big></td>
+              <td class="black-color" style="font-weight: bold;"><big>Description</big></td>
+            </tr>
+            <tr>
+              <td class="black-color">Adler's data on experimenter
+                expectations</td>
+              <td><a href="Adler.txt">Adler.txt</a></td>
+              <td><a href="Adler.pdf">Adler.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Angell's data on the moral
+                integration of U.S. cities</td>
+              <td><a href="Angell.txt">Angell.txt</a></td>
+              <td><a href="Angell.pdf">Angell.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Anscombe's data on U.S. state
+                education expenditures</td>
+              <td><a href="Anscombe.txt">Anscombe.txt</a></td>
+              <td><a href="Anscombe.pdf">Anscombe.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Ancombe's "quartet" of regression
+                data sets</td>
+              <td><a href="Quartet.txt">Quartet.txt</a></td>
+              <td><a href="Quartet.pdf">Quartet.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Baseball salary data for 1987,
+                hitters</td>
+              <td><a href="BaseballHitters.txt">BaseballHitters.txt</a></td>
+              <td><a href="BaseballHitters.pdf">BaseballHitters.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Baseball salary data for 1987,
+                pitchers</td>
+              <td><a href="BaseballPitchers.txt">BaseballPitchers.txt</a></td>
+              <td><a href="BaseballPitchers.pdf">BaseballPitchers.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Baumann's data on methods of
+                teaching reading</td>
+              <td><a href="Baumann.txt">Baumann.txt</a></td>
+              <td><a href="Baumann.pdf">Baumann.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Blackmore and Davis's longitudinal
+                data on eating disorders and exercise</td>
+              <td><a href="Blackmore.txt">Blackmore.txt</a></td>
+              <td><a href="Blackmore.pdf">Blackmore.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">British Election Panel Study data</td>
+              <td><a href="BEPS.txt">BEPS.txt</a></td>
+              <td><a href="BEPS.pdf">BEPS.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Burt's concocted data on IQs of
+                separated twins</td>
+              <td><a href="Burt.txt">Burt.txt</a></td>
+              <td><a href="Burt.pdf">Burt.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian Election Study 2011</td>
+              <td><a href="CES2011-abortion.txt">CES2011-abortion.txt,</a>,<a
+                  href="CES2011-turnout.txt">CES2011-turnout.txt</a></td>
+              <td><a href="CES2011-abortion.pdf">CES2011-abortion.pdf,</a>,<a
+                  href="CES2011-turnout.pdf">CES2011-turnout.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian inter-provincial
+                migration&nbsp;</td>
+              <td><a href="CanadaMigration.txt">CanadaMigration.txt</a></td>
+              <td><a href="CanadaMigration.pdf">CanadaMigration.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian occupational
+                prestige&nbsp;</td>
+              <td><a href="Prestige.txt">Prestige.txt</a></td>
+              <td><a href="Prestige.pdf">Prestige.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian population&nbsp;</td>
+              <td><a href="CanadaPopulation.txt">CanadaPopulation.txt</a></td>
+              <td><a href="CanadaPopulation.pdf">CanadaPopulation.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian Survey of Labour and
+                Income Dynamics (SLID)</td>
+              <td><a href="SLID-Ontario.txt">SLID-Ontario.txt</a>, <a
+                  href="SLID-women.txt">SLID-women.txt</a>, <a
+                  href="SLID-selection.txt">SLID-selection.txt</a>, <a
+                  href="SLID-censored.txt">SLID-censored</a></td>
+              <td><a href="SLID-Ontario.pdf">SLID-Ontario.pdf</a>, <a
+                  href="SLID-women.pdf">SLID-women.pdf</a>, <a
+                  href="SLID-selection.pdf">SLID-selection.pdf</a>, <a
+                  href="SLID-censored.pdf">SLID-censored.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Canadian women's labor-force
+                participation</td>
+              <td><a href="CanadianWomen.txt">CanadianWomen.txt</a></td>
+              <td><a href="CanadianWomen.pdf">CanadianWomen.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Chilean plebiscite&nbsp;</td>
+              <td><a href="Chile.txt">Chile.txt</a></td>
+              <td><a href="Chile.pdf">Chile.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Chirot and Ragin's data on the
+                1907 Romanian peasant rebellion</td>
+              <td><a href="Chirot.txt">Chirot.txt</a></td>
+              <td><a href="Chirot.pdf">Chirot.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Cowles and Davis's data on
+                volunteering for an experiment</td>
+              <td><a href="Cowles.txt">Cowles.txt</a></td>
+              <td><a href="Cowles.pdf">Cowles.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Davis's data on height and weight
+                of exercisers</td>
+              <td><a href="Davis.txt">Davis.txt</a></td>
+              <td><a href="Davis.pdf">Davis.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Duncan's U.S. occupational
+                prestige data</td>
+              <td><a href="Duncan.txt">Duncan.txt</a></td>
+              <td><a href="Duncan.pdf">Duncan.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Education and related data for the
+                U.S. states</td>
+              <td><a href="States.txt">States.txt</a></td>
+              <td><a href="States.pdf">States.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Ericksen et al.'s U.S. Census
+                undercount data</td>
+              <td><a href="Ericksen.txt">Ericksen.txt</a></td>
+              <td><a href="Ericksen.pdf">Ericksen.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">B. Fox's Canadian women's
+                labor-force time series data</td>
+              <td><a href="BFox.txt">BFox.txt</a></td>
+              <td><a href="BFox.pdf">BFox.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Gelman and Hill's polling data on
+                the 1988 U.S. presidential election</td>
+              <td><a href="Gelman.txt">Gelman.txt</a></td>
+              <td><a href="Gelman.pdf">Gelman.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Fox &nbsp;and Guyer's data on
+                anonymity and cooperation</td>
+              <td><a href="Guyer.txt">Guyer.txt</a></td>
+              <td><a href="Guyer.pdf">Guyer.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Fox and Hartnagel's Canadian
+                crime-rates time series data</td>
+              <td><a href="Hartnagel.txt">Hartnagel.txt</a></td>
+              <td><a href="Hartnagel.pdf">Hartnagel.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Freedman's data on population
+                density and crime in U.S. cities</td>
+              <td><a href="Freedman.txt">Freedman.txt</a></td>
+              <td><a href="Freedman.pdf">Freedman.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Friendly and Franklin's memory
+                data</td>
+              <td><a href="Friendly.txt">Friendly.txt</a></td>
+              <td><a href="Friendly.pdf">Friendly.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Ginzberg's data on depression</td>
+              <td><a href="Ginzberg.txt">Gnizberg.txt</a></td>
+              <td><a href="Ginzberg.pdf">Ginzberg.pd</a>f</td>
+            </tr>
+            <tr>
+              <td class="black-color">Greene and Shaffer's data on
+                Canadian refugee-appeals</td>
+              <td><a href="Greene.txt">Greene.txt</a></td>
+              <td><a href="Greene.pdf">Greene.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Hamilton's data on school-closing
+                opinion in a Vermont town</td>
+              <td><a href="Hamilton.txt">Hamilton.txt</a></td>
+              <td><a href="Hamilton.pdf">Hamilton.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Harris et al.'s data on invasions
+                of personal space</td>
+              <td><a href="Harris.txt">Harris.txt</a></td>
+              <td><a href="Harris.pdf">Harris.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">High School and Beyond study </td>
+              <td><a href="HSB.txt">HSB.txt</a></td>
+              <td><a href="HSB.pdf">HSB.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Klein's data on the U.S. economy</td>
+              <td><a href="Klein.txt">Klein.txt</a></td>
+              <td><a href="Klein.pdf">Klein.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Leinhardt and Wasserman's data on
+                infant mortality</td>
+              <td><a href="Leinhardt.txt">Leinhardt.txt</a></td>
+              <td><a href="Leinhardt.pdf">Leinhardt.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Long's data on attitude towards
+                working mothers</td>
+              <td><a href="Moms-Long.txt">Moms-Long.txt</a></td>
+              <td><a href="Moms-Long.pdf">Moms-Long.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Long's data on occupational
+                attainment</td>
+              <td><a href="GSS-Long.txt">GSS-Long.txt</a></td>
+              <td><a href="GSS-Long.pdf">GSS-Long.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Long's data on the prestige of
+                biochemistry PhDs first job</td>
+              <td><a href="Long-PhDs.txt">Long-PhDs.txt</a></td>
+              <td><a href="Long-PhDs.pdf">Long-PhDs.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Long's data on research
+                productivity of doctoral students in biochemistry</td>
+              <td><a href="Long.txt">Long.txt</a></td>
+              <td><a href="Long.pdf">Long.pdf</a></td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <table style="text-align: left; width: 100%;"
+                  cellspacing="2" cellpadding="2" border="1">
+                  <tbody>
+                    <tr>
+                      <td class="black-color">Data on Migraine Headaches
+                        from Kostecki-Dillon, Monette, and Wong<br>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td valign="top"><a href="Migraines.txt"
+                  moz-do-not-send="true">Migraines.txt</a></td>
+              <td valign="top"><a href="Migraines.pdf"
+                  moz-do-not-send="true">Migraines.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Mandel's contrived collinear data</td>
+              <td><a href="Mandel.txt">Mandel.txt</a></td>
+              <td><a href="Mandel.pdf">Mandel.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Moore and Krupat's data on
+                conformity</td>
+              <td><a href="Moore.txt">Moore.txt</a></td>
+              <td><a href="Moore.pdf">Moore.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Mroz's data on U.S. married
+                women's labor-force participation</td>
+              <td><a href="Mroz.txt">Mroz.txt</a></td>
+              <td><a href="Mroz.pdf">Mroz.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Ornstein's Canadian
+                interlocking-directorate data</td>
+              <td><a href="Ornstein.txt">Ornstein.txt</a></td>
+              <td><a href="Ornstein.pdf">Ornstein.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Phillips et al.'s data on girls'
+                body weight pre- and post-menarche</td>
+              <td><a href="Phillips.txt">Phillips.txt</a></td>
+              <td><a href="Phillips.pdf">Phillips.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Powers and Xie's data on
+                high-school graduation</td>
+              <td><a href="HS-Powers.txt">HS-Powers.txt</a></td>
+              <td><a href="HS-Powers.pdf">HS-Powers.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Powers and Xie's data on sex-role
+                attitudes</td>
+              <td><a href="Women-Powers.txt">Women-Powers.txt</a></td>
+              <td><a href="Women-Powers.pdf">Women-Powers.txt</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Robey et al.'s data on fertility
+                and contraception</td>
+              <td><a href="Robey.txt">Robey.txt</a></td>
+              <td><a href="Robey.pdf">Robey.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Sahlin's data on agricultural
+                production in Mazulu village</td>
+              <td><a href="Sahlins.txt">Sahlins.txt</a></td>
+              <td><a href="Sahlins.pdf">Sahlins.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Snijder and Bosker's data on test
+                scores of grade-8 students in the Netherlands</td>
+              <td><a href="Snijders.txt">Snijders.txt</a></td>
+              <td><a href="Snijders.pdf">Snijders.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Titanic: survival of passengers</td>
+              <td><a href="Titanic.txt">Titanic.txt</a></td>
+              <td><a href="Titanic.pdf">Titanic.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">U.N. social indicators data</td>
+              <td><a href="UnitedNations.txt">UnitedNations.txt</a></td>
+              <td><a href="UnitedNations.pdf">UnitedNation.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">U.S. population</td>
+              <td><a href="USPopulation.txt">USPopulation.txt</a></td>
+              <td><a href="USPopulation.pdf">USPopulation.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Vocabulary data from the U.S.
+                General Social Survey</td>
+              <td><a href="Vocabulary.txt">Vocabulary.txt</a>, <a
+                  href="Vocabulary-2.txt">Vocabulary-2.txt</a></td>
+              <td><a href="Vocabulary.pdf">Vocabulary.pdf</a>, <a
+                  href="Vocabulary-2.pdf">Vocabulary-2.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">Wong, Monette, and Weiner's data
+                on post-coma recovery of IQ</td>
+              <td><a href="Wong.txt">Wong.txt</a></td>
+              <td><a href="Wong.pdf">Wong.pdf</a></td>
+            </tr>
+            <tr>
+              <td class="black-color">World Value Survey data</td>
+              <td><a href="WVS.txt">WVS.txt</a></td>
+              <td><a href="WVS.pdf">WVS.pdf</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="black-color">You can also&nbsp;<a
+            href="AR3-datasets.zip">download a zip file</a> with all of
+          the data files and descriptions.</p>
+      </div>
+      <div class="footer">
+        <blockquote>
+          <p class="footer" align="left">last modified: 2015-05-20 by
+            John Fox &lt;<a href="mailto:jfox@mcmaster.ca">jfox AT
+              mcmaster.ca</a>&gt;</p>
+        </blockquote>
+      </div>
+      <!-- end .container --></div>
+  </body>
+</html>
