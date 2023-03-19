@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Old Mac OS X Rcmdr Installation</title>
+    <style type="text/css">.sans-serif{font-family:Arial,Helvetica,sans-serif}.sans-serif-blue{color:#00f;font-family:Arial,Helvetica,sans-serif}</style>
+  </head>
+  <body>
+    <h1 class="sans-serif-blue" align="center">R Commander Mac OS X
+      Installation Notes for Versions of R Before R 3.0.0</h1>
+    <p class="sans-serif" align="left">These installation notes are
+      intended for Mac OS X users of versions of R prior to R 3.0.0. R
+      version 3.0.0 comes with an X-Windows installation of Tcl/Tk, and
+      it is thus unnecessary to install Tcl/Tk for X Windows in a
+      separate step. </p>
+    <p class="sans-serif" align="left">I <strong>strongly recommend
+        that you upgrade</strong> to the current version of R, and then
+      follow the <a href="installation-notes.html">standard R Commander
+        installation notes for Mac OS X users</a>. Using an old version
+      of R will restrict you to an old version of the R Commander as
+      well, and these old versions are now unsupported.</p>
+    <p class="sans-serif" align="left">The <span style="font-weight:
+        bold;">Rcmdr</span> package is a standard R package, and it
+      installs and
+      is loaded in the normal manner. There are, however, a few
+      installation issues on Macintosh systems, and these are described
+      in this document.</p>
+    <p class="sans-serif" align="left">A general point is keep is mind
+      is that the <span style="font-weight: bold;">Rcmdr</span> package
+      uses
+      a number of other "contributed" packages (in addition to packages,
+      such as <span style="font-weight: bold;">tcltk</span> and <span
+        style="font-weight: bold;">MASS</span>, that are part of the
+      standard R distribution), and these
+      must be present for it to work properly:&nbsp;<span
+        style="font-weight: bold;">abind</span>, <span
+        style="font-weight: bold;">aplpack</span>,<span
+        style="font-weight: bold;"> car</span>, <span
+        style="font-weight: bold;">colorspace, effects</span>, <span
+        style="font-weight: bold;">Hmisc</span>, <span
+        style="font-weight: bold;">leaps</span>, <span
+        style="font-weight: bold;">lmtest</span>, <span
+        style="font-weight: bold;">multcomp</span>, <span
+        style="font-weight: bold;">relimp</span>, <span
+        style="font-weight: bold;">rgl</span>. Many of these packages
+      have their own dependencies, which depend on still other packages,
+      etc.</p>
+    <p class="sans-serif" align="left">Once it is installed, to load the
+      <span style="font-weight: bold;">Rcmdr</span> package, just enter
+      the
+      command <font face="Courier New, Courier, mono">library(Rcmdr)</font>.</p>
+    <p class="sans-serif" align="left"> <span style="font-family:
+        Helvetica,Arial,sans-serif;">The
+        procedure for installing the R Commander under Mac OS X for
+        versions of R prior to 3.0.0 is a bit
+        complicated, so please read and follow these instructions
+        carefully.
+        These instructions and the associated files are intended for Mac
+        OS X
+        10.5 (Leopard), 10.6 (Snow Leopard), 10.7 (Lion), and 10.8
+        (Mountain Lion) systems. I assume that you've already installed
+        R.</span></p>
+    <ul style="font-family: Helvetica,Arial,sans-serif;">
+      <li>Check
+        to see if the X11 windowing system (X Windows) has already been
+        installed on your computer. For <strong>OS X 10.5, 10.6, and
+          10.7</strong>, the file X11.app
+        should appear&nbsp;in the Utilities folder under Applications in
+        the
+        finder. This application should always be installed under OS X
+        10.7. If X11.app is missing under OS X 10.5 or 10.6, you can
+        install it from your Mac OS X
+        installation disc as follows:</li>
+    </ul>
+    <ul style="font-family: Helvetica,Arial,sans-serif;">
+      <ul>
+        <li>Insert your Mac OS X install disc. (If you have two discs it
+          will be on the"Install Disc 1").</li>
+        <li>Double click on Optional Installs.</li>
+        <li>Double click on Optional Installs.mpkg, then click
+          Continue&nbsp;and accept the license agreement.</li>
+        <li>Click the triangle next to Applications in order to expand
+          the list of applications.</li>
+        <li>Check "X11", and then click Continue and Install. Click
+          Close when the installation finishes.</li>
+      </ul>
+      <p>Under <strong>OS X 10.8</strong> (Mountain Lion), the X11
+        application is called XQuartz.app, and it is no longer included
+        with the operating system. </p>
+      <ul>
+        <li>When you first try to use X11, however -- for example, by
+          installing and then loading the Rcmdr package in R (see the
+          bullets below) -- OS X will offer to help you install X11,
+          with a message like "To open 'R,' you need to install X11.
+          Would you like to install X11 now?" </li>
+        <li>Click the continue button, which will take you to the Apple
+          support website, and thence to <a
+            href="http://xquartz.macosforge.org">http://xquartz.macosforge.org</a>,
+          where you can download the disk image (dmg) file for XQuartz.
+        </li>
+        <li>When you open this file by double-clicking on it, you'll
+          find XQuartz.pkg; double-click on it to run the installer,
+          clicking through all the defaults. </li>
+        <li>After the installer runs, you'll have to log out and back on
+          to your Mac OS X account.</li>
+      </ul>
+    </ul>
+    <ul style="font-family: Helvetica,Arial,sans-serif;">
+      <li>Install Tcl/Tk for X Windows. Note that this step is necessary
+        only for versions of R prior to R 3.0.0. <a
+          href="http://cran.r-project.org/bin/macosx/tools/">Installers</a>
+        (tcltk-8.5.5-x11.dmg or tcltk-8.5.5-x11.pkg) for various
+        versions of Mac OS X are available</li>
+    </ul>
+    <ul style="font-family: Helvetica,Arial,sans-serif;">
+      <ul>
+        <li>Install
+          Tcl/Tk for X Windows by double-clicking on the downloaded file
+          tcltk-8.5.5-x11.dmg and then double-clicking on the installer
+          file
+          tcltk.pkg, or by double-clicking on the downloaded file
+          tcltk-8.5.5-x11.pkg.</li>
+        <li>Under <strong>OS X 10.8</strong> (Mountain Lion), depending
+          upon how your security preferences are set, you may see the
+          message, "'tcltk.pkg' can't be opened because it is from an
+          unidentified developer." At this point, you can proceed by
+          clicking OK to close the message box; then right-clicking (or
+          control-clicking) tcltk.pkg; and finally clicking the Open
+          button in the resulting dialog box. On the other hand, you
+          might get tired of Apple trying to restrict the software that
+          you install on your Mac, and simply change your security and
+          privacy preferences to "allow applications downloaded from
+          anywhere."</li>
+        <li>Continue through the&nbsp;installation. </li>
+      </ul>
+    </ul>
+    <ul style="font-family: Helvetica,Arial,sans-serif;">
+      <li>Start
+        R by running R.app. At the R &gt; command prompt, type the
+        following
+        command and press the return key&nbsp;(to avoid errors, you can
+        copy
+        the command from this document and paste it at the R &gt;
+        command
+        prompt):</li>
+    </ul>
+    <p><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><span
+        style="font-family: monospace;">install.packages("Rcmdr")</span><br
+        style="font-family: Helvetica,Arial,sans-serif;">
+      <br style="font-family: Helvetica,Arial,sans-serif;">
+    </p>
+    <div style="margin-left: 40px; font-family:
+      Helvetica,Arial,sans-serif;">R
+      will ask you to select a CRAN mirror; pick a mirror site near you.
+      <br>
+    </div>
+    <ul>
+      <li><span style="font-family: Helvetica,Arial,sans-serif;">Once it
+          is installed, to load the <strong>Rcmdr</strong> package,
+          simply issue the command</span><br style="font-family:
+          Helvetica,Arial,sans-serif;">
+        <br style="font-family: Helvetica,Arial,sans-serif;">
+        <span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;</span><span
+          style="font-family: monospace;"> library(Rcmdr)</span><br
+          style="font-family: Helvetica,Arial,sans-serif;">
+        <br style="font-family: Helvetica,Arial,sans-serif;">
+        <span style="font-family: Helvetica,Arial,sans-serif;">at the R
+          &gt; command prompt and press return. When you first load the
+          <strong>Rcmdr</strong> package, it will offer to download and
+          install missing
+          dependencies; allow it to do so. Note that under Mac OS X 10.8
+          (Mountain Lion) you will likely have to install XQuartz.app at
+          this point (see above).<br>
+        </span>
+        <hr>
+      </li>
+    </ul>
+    <p class="sans-serif"><i>Last modified: 2023-02-23 by John Fox</i>
+      &lt;<a href="mailto:john.david.fox@proton.me"
+        moz-do-not-send="true">john.david.fox AT proton.me</a>&gt;. <br>
+    </p>
+    <p></p>
+  </body>
+</html>

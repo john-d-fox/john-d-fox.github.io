@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>R Commander Installation</title>
+    <style type="text/css">.sans-serif{font-family:Arial,Helvetica,sans-serif}.sans-serif-blue{color:#00f;font-family:Arial,Helvetica,sans-serif}.deleted{font-family:Courier\ New,Courier,monospace}typewriter-font{font-family:Times\ New\ Roman,Times,serif}.deleted{font-family:Times\ New\ Roman,Times,serif}.typewriter-font{font-family:Times\ New\ Roman,Times,serif}.typewrite-font{font-family:Courier\ New,Courier,monospace}.typewriterFont{font-family:Courier\ New,Courier,monospace}</style>
+  </head>
+  <body text="#000000" bgcolor="#ffffff">
+    <h1 class="sans-serif" align="center"><span class="sans-serif-blue">R
+        Commander Installation Notes</span></h1>
+    <p class="sans-serif" align="left">The <span style="font-weight:
+        bold;">Rcmdr</span> package is a standard R package, and it
+      installs and is loaded in the normal manner. There are, however, a
+      few installation issues, particularly on Macintosh systems, and
+      these are described in this document.</p>
+    <p class="sans-serif" align="left">For more detailed basic
+      installation instructions, see Ch. 2 of my book <a
+        href="index.html" moz-do-not-send="true">Using the R Commander</a>.</p>
+    <p class="sans-serif" align="left">A general point is keep in mind
+      is that the <span style="font-weight: bold;">Rcmdr</span> package
+      uses a number of other "contributed" packages (in addition to
+      packages, such as <span style="font-weight: bold;">tcltk</span>
+      and <span style="font-weight: bold;">MASS</span>, that are part
+      of the standard R distribution), and these must be present for it
+      to work properly. Many of these packages have their own
+      dependencies, which depend on still other packages, etc. These
+      additional packages will either be installed along with the <strong>Rcmdr</strong>
+      package or the <strong>Rcmdr</strong> will offer to install them
+      when it first starts up (and you should accept the offer).</p>
+    <h2 class="sans-serif-blue" align="left">General Installation
+      Procedure</h2>
+    <p class="sans-serif" align="left">The following instructions may be
+      all you need to get started; for more detailed instructions and
+      potential installation issues, see the various sections below.
+      These instructions assume that you have an active Internet
+      connection.</p>
+    <ol>
+      <li class="sans-serif"><a href="https://cran.r-project.org/"
+          moz-do-not-send="true">Download
+          R from CRAN</a> and install it in the manner appropriate to
+        your operating system. If you have an old version of R -- that
+        is, older than the current version -- then it's generally a good
+        idea to install the current version of R before installing the <strong>Rcmdr</strong>
+        package. On Windows, opt for a customized startup and select the
+        single-document interface ("SDI," see the Windows notes below
+        for details).</li>
+      <li class="sans-serif">On macOS only, <a
+          href="https://www.xquartz.org/" moz-do-not-send="true">download
+          and install XQuartz</a>,
+        and reboot your computer (see the Mac notes below for greater
+        detail).</li>
+      <li class="sans-serif">Start R, and at the <span
+          class="typewrite-font">&gt;</span> command prompt, type the
+        command <span class="typewriterFont">install.packages("Rcmdr")</span></li>
+      <li class="sans-serif">Once it is installed, to load the <span
+          style="font-weight: bold;">Rcmdr</span> package, just enter
+        the command <font face="Courier New, Courier, mono">library(Rcmdr)</font></li>
+    </ol>
+    <h2 class="sans-serif-blue" align="left">General Installation Issues</h2>
+    <p class="sans-serif" align="left">Not really an <i>installation</i>
+      issue, but a common problem on all platforms: If you save the R
+      workspace when you exit from R (which, unfortunately, is the
+      out-of-the-box default at the end of a session on all platforms
+      and in RStudio), then you can expect to experience problems when
+      the saved workspace is loaded at the start of subsequent sessions.
+      The preemptive remedy is never to save the R workspace at the end
+      of a session. If you do save the workspace on exiting from R, the
+      remedy is to delete the file in which the workspace is saved,
+      which is named <span class="sans-serif"><span
+          class="typewrite-font">.RData</span></span>.&nbsp; Files with
+      names beginning with a period are&nbsp; (again unfortunately)
+      generally hidden from the Windows File Explorer and the macOS
+      Finder. To reveal <span class="sans-serif"><span
+          class="typewrite-font">.RData</span></span> in Windows File
+      Explorer, <a moz-do-not-send="true"
+href="https://support.microsoft.com/en-us/windows/common-file-name-extensions-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01">see
+these
+        instructions</a>; in macOS Finder, <a moz-do-not-send="true"
+        href="https://www.pcmag.com/how-to/how-to-access-your-macs-hidden-files">see
+these
+        instructions</a>. Finally, If you exit from R directly
+      from the R Commander, the R workspace isn't saved.<br>
+    </p>
+    <p class="sans-serif" align="left">Occasionally, an R package or
+      packages required by the <strong>Rcmdr</strong> package fails to
+      be installed and the R Commander can't start. When this happens,
+      there is typically an informative error message about the missing
+      package(s). There are two common causes for this problem: (1) The
+      package(s) in question may be temporarily missing from the CRAN
+      mirror that you used; or (2) the package(s) may be permanently
+      unavailable for an older version of R. </p>
+    <p align="left"><span class="sans-serif">In the first instance, you
+        can install (each) missing package directly via the command <span
+          class="typewrite-font">install.packages("<em>package-name</em>")</span>,
+        or, for more than one missing package, <span
+          class="typewrite-font">install.packages(c("<em>package-1-name</em>",
+          "<em>package-2-name</em>", <em>etc</em>))</span></span> , <span
+        class="sans-serif">selecting a different CRAN mirror from the
+        one you used initially. In the second instance, you can install
+        the current version of R (always a good idea), and start again.</span></p>
+    <p class="sans-serif">If you wish to start the R Commander
+      automatically when R starts up, you can add a plain-text ("ascii")
+      file named <span class="typewrite-font">.Rprofile</span> to your
+      home directory, with the following contents:</p>
+    <p class="sans-serif"><font face="Courier New, Courier, mono">local({<br>
+        old &lt;- getOption("defaultPackages")<br>
+        options(defaultPackages = c(old, "Rcmdr"))<br>
+        })</font></p>
+    <p class="sans-serif" align="left">To determine your home directory,
+      type the command <span class="typewrite-font">getwd()</span>
+      ("get working directory") at the <span class="typewrite-font">&gt;</span>
+      command prompt in a fresh R session. Be sure to use a plain-text
+      editor to create this file, not a word processor like Word, or, if
+      using a word processor, to save the file as a plain-text file.</p>
+    <h2 class="sans-serif-blue" align="left">Notes for specific
+      platforms</h2>
+    <p class="sans-serif" align="left">If the general installation
+      procedure and installation issues above are insufficient, here is
+      specific information for Windows, Linux, and macOS systems:</p>
+    <h3 class="sans-serif-blue" align="left">Windows Installation</h3>
+    <p align="left"><span class="sans-serif">The easiest way to install
+        the <span style="font-weight: bold;">Rcmdr</span> package is
+        via the Rgui <i>Packages -&gt; Install packages</i>
+        menu or via the command </span><span class="typewrite-font">install.packages("Rcmdr")</span><span
+        class="sans-serif"> entered at the R </span><span
+        class="typewrite-font">&gt;</span><span class="sans-serif">
+        command prompt. R will ask you to select a CRAN mirror; pick the
+        first, "0-Cloud" mirror, or a mirror site near you.</span></p>
+    <p align="left"><span class="sans-serif">When you first load the <strong>Rcmdr</strong>
+        package with the command <span class="typewrite-font">library("Rcmdr")</span>,
+        it will offer to download and install missing dependencies;
+        allow it to do so.&nbsp;If you installed R in </span><span
+        class="typewrite-font" style="font-family: monospace;">Program
+        Files</span><span class="sans-serif">, you may prefer to run R
+        with adminstrator privileges to install packages:&nbsp;Right
+        click the R icon and select "Run as administrator." Otherwise,
+        packages will be installed in a package library particular to
+        your user account rather than the main R package library; that
+        should work OK too. I suggest that you install R into a
+        different
+        directory, such as <span style="font-family: monospace;">C:\R\</span>,
+        to avoid this issue. </span></p>
+    <p class="sans-serif" align="left">On Windows, the <strong>Rcmdr</strong>
+      package works best with the "single-document "R interface (SDI).
+      Under the default "multiple-document interface" (MDI), R Commander
+      dialog boxes may not stay on top of the main R window. In the <em>Startup</em>
+      options screen of the R installer, select <em>Yes</em>
+      (customized startup). Then select the SDI (single-document
+      interface) in preference to the default MDI (multiple-document
+      interface); feel free to make other changes, but you may take all
+      the remaining defaults.</p>
+    <p><span class="sans-serif">If you install R with the standard MDI,
+        to enable the SDI you can make a copy of the R desktop icon
+        (right-click on the icon, drag it to a different location on the
+        desktop, select<i> Copy Here</i> from the context menu).
+        Right-click the new icon and select <i>Properties</i>. Add <font
+          class="typewrite-font" face="monospace">--sdi</font> (preceded
+        by a space) to the <i>Target</i> field on the <i>Shortcut </i>tab
+of
+        the <i>Properties</i> dialog box. The field should read
+        something like</span> <span class="typewrite-font"><font
+          face="monospace">"C:\Program Files\R\R-<em>x.y.z</em>\bin\Rgui.exe"
+          --sdi</font>,</span><span class="sans-serif"> where <font
+          class="typewrite-font" face="monospace"><em>x.y.z</em></font>
+        specifies the version of R you installed. If you wish, change
+        the name of the icon on the <i>General</i> tab (e.g., to <i>R
+          x.y.z SDI</i>). Click <i>OK</i>. Alternatively, you canyou
+        can edit the </span><span class="typewrite-font"
+        style="font-family: monospace;">Rconsole</span><span
+        class="sans-serif"> file in R's </span><span
+        class="typewrite-font" style="font-family: monospace;">etc</span><span
+        class="sans-serif"> subdirectory to select the SDI.</span></p>
+    <h3 class="sans-serif-blue" align="left">Linux/Unix Installation</h3>
+    <p class="sans-serif" align="left">Linux/Unix systems typically have
+      all of the software required for building packages already
+      installed. The easiest way to install the <strong>Rcmdr</strong>
+      package is to run R as root and issue the command <font
+        face="Courier New, Courier, mono">install.packages("Rcmdr")</font>
+      at the R prompt.&nbsp; R will ask you to select a CRAN mirror;
+      pick the first, "0-Cloud" mirror, or a mirror site near you.</p>
+    <p class="sans-serif" align="left">On Ubutu systems, in particular,
+      the following procedure should work (slightly modified from a
+      suggestion by Ista Zahn):</p>
+    <ol>
+      <li> <span class="sans-serif">&nbsp;Add the R repository to
+          Ubuntu (see <a
+            href="http://cran.r-project.org/bin/linux/ubuntu/">http://cran.r-project.org/bin/linux/ubuntu/</a>).</span></li>
+      <li><span class="sans-serif">&nbsp;Install base R and the R dev
+          package: </span><span class="typewrite-font"
+          style="font-family: monospace;">sudo apt-get install
+          r-base r-base-dev</span></li>
+      <li><span class="sans-serif">Start R from the Ubuntu command line
+          as root so you can install
+          packages system-wide: </span><span class="typewrite-font"
+          style="font-family: monospace;">sudo R</span></li>
+      <li><span class="sans-serif">From the R command prompt, install
+          Rcmdr:&nbsp; </span><span style="font-family: monospace;">install.packages("Rcmdr")</span>.
+        <span class="sans-serif"> R will ask you to select a CRAN
+          mirror; pick the first, "0-Cloud" mirror, or a mirror site
+          near you.</span></li>
+    </ol>
+    <p class="sans-serif"> It is also possible to install R and R
+      packages from the Ubuntu package respository but these are almost
+      always out of date. </p>
+    <p class="sans-serif">When you first load the <strong>Rcmdr</strong>
+      package with the command <tt class="typewrite-font">library(Rcmdr)</tt>,
+      it will offer to download and install missing dependencies; allow
+      it to do so.</p>
+    <h3 class="sans-serif-blue" align="left">macOS Installation</h3>
+    <p style="font-family: Helvetica,Arial,sans-serif;">These
+      instructions are for R version 3.6.1 or later; if you're using an
+      earlier version of R, I suggest that you upgrade (in fact, it's
+      generally a good idea to upgrade to the current version of R), or,
+      failing that, consult the special <a
+        href="old-Mac-installation-notes.html" moz-do-not-send="true">macOS
+installation
+        notes for the R Commander under older versions of R</a>.
+      R 3.6.1only supports macOS version 10.11 (El Capitan) or higher.
+      Please read these instructions carefully, as they are a little
+      complicated.</p>
+    <ul>
+      <li class="sans-serif"><span style="font-family:
+          Helvetica,Arial,sans-serif;">Before installing R and the R
+          Commander, make sure that your macOS system is up-to-date by
+          running Software Update from the "apple" menu at the top-left
+          of the screen. This is important, because R assumes that the
+          system is up-to-date and may not function properly if it is
+          not.</span></li>
+    </ul>
+    <ul>
+      <li class="sans-serif">Install the current version of R from
+        the&nbsp;<a href="http://cran.r-project.org/">Comprehensive R
+          Archive Network</a>&nbsp;(CRAN), selecting a mirror site near
+        you; a list of&nbsp;<a
+          href="http://cran.r-project.org/mirrors.html">CRAN mirrors</a>&nbsp;appears
+at
+        the upper left of the CRAN home page.&nbsp;</li>
+    </ul>
+    <ul>
+      <li class="sans-serif">Check to see whether the X11 windowing
+        system (X Windows) has already been installed on your computer.
+        For <strong>macOS 10.6 and 10.7</strong>, the file X11.app
+        should appear&nbsp;in the Utilities folder under Applications in
+        the finder. This application should always be installed under
+        macOS 10.7. For <strong>macOS 10.8 </strong>or higher, the
+        file is named XQuartz.app and is no longer included with the
+        operating system. XQuartz.app may also be installed in macOS
+        10.6 or 10.7. (The R Commander uses the <strong>tcltk</strong>
+        package for R, which requires X-Windows.)</li>
+    </ul>
+    <blockquote>
+      <p class="sans-serif"> <strong>Note that if and when you upgrade
+          macOS, you will have to reinstall XQuartz even if you
+          installed it previously. </strong></p>
+    </blockquote>
+    <ul>
+      <li class="sans-serif">If neither X11.app nor XQuartz.app is
+        installed, install XQuartz.<em> In fact, regardless of whether
+          some version of X-Windows is installed on your computer, it
+          shouldn't hurt to install the current version of XQuartz.</em>
+        <ul>
+          <li><a href="https://www.xquartz.org/">Download the disk image
+              (dmg) file for XQuartz.</a></li>
+          <li>When you open this file by double-clicking on it, you'll
+            find XQuartz.pkg; double-click on it to run the installer,
+            clicking through all the defaults. </li>
+          <li><strong>After the installer runs, you'll have to log out
+              and back on to your macOS account, or just reboot your
+              computer.</strong></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="sans-serif">Start R by running R.app. At the &gt;
+        command prompt, type the following command and press the return
+        key:</li>
+    </ul>
+    <p><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; </span><span style="font-family: monospace;">install.packages("Rcmdr")</span><br
+        style="font-family: Helvetica,Arial,sans-serif;">
+      <br style="font-family: Helvetica,Arial,sans-serif;">
+    </p>
+    <div style="margin-left: 40px; font-family:
+      Helvetica,Arial,sans-serif;">R will ask you to select a CRAN
+      mirror; pick the first, "0-Cloud" mirror, or a mirror site near
+      you. <br>
+    </div>
+    <ul>
+      <li><span style="font-family: Helvetica,Arial,sans-serif;">Once it
+          is installed, to load the <strong>Rcmdr</strong> package,
+          simply issue the command</span><br style="font-family:
+          Helvetica,Arial,sans-serif;">
+        <br style="font-family: Helvetica,Arial,sans-serif;">
+        <span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;&nbsp;&nbsp;</span><span
+          style="font-family: monospace;"> library(Rcmdr)</span><br
+          style="font-family: Helvetica,Arial,sans-serif;">
+        <br style="font-family: Helvetica,Arial,sans-serif;">
+        <span style="font-family: Helvetica,Arial,sans-serif;">at the R
+          &gt; command prompt and press return. When you first load the
+          <strong>Rcmdr</strong> package, it will offer to download and
+          install missing dependencies; allow it to do so.</span></li>
+    </ul>
+    <ul>
+      <li><span class="sans-serif"><em>Suppressing "app nap":</em> Under
+          <strong>macOS 10.9 ("Mavericks")</strong></span> <span
+          class="sans-serif">or later, the R Commander may slow down or
+          occasionally hesitate to display a menu as your session
+          progresses. This behaviour is due to macOS 10.9 or later
+          saving power by going into "nap" mode when the R.app window is
+          not visible.</span> <span class="sans-serif">I am aware of
+          several solutions (beyond always inconveniently insuring that
+          the top of the R.app window is visible). The first solution is
+          simplest.</span>
+        <blockquote>
+          <p class="sans-serif">(1) You can suppress app nap via the R
+            Commander <em>Tools -&gt; Manage macOS app nap for R.app </em>menu.
+Select
+            the radio button to set app nap off in the resulting
+            dialog box. This setting is permanent across R.app sessions
+            until you change it.</p>
+          <span class="sans-serif">(2) You can avoid the problem by
+            running R in a terminal window rather than using R.app</span>.
+          <span class="sans-serif">There really is no reason to prefer
+            running the R Commander in R.app, so using R from a terminal
+            should be perfectly fine</span> .</blockquote>
+        <ul>
+          <ul>
+            <li class="sans-serif">Open the Utilities subfolder inside
+              the Applications folder on your Mac. Click on Terminal.app
+              to open a terminal window.</li>
+            <li><span class="sans-serif">At the Unix command prompt in
+                the terminal window, type </span><span
+                class="typewrite-font">R</span><span class="sans-serif">
+                and press the <em>enter</em> (or <em>return</em>) key.
+                On my Mac, the Unix command prompt looks like this:</span><span
+                class="typewrite-font"> john-fox-mbp:~ jfox$</span></li>
+            <li><span class="sans-serif">Once R starts up, you'll see
+                the usual initial messages, followed by the R command
+                prompt,</span><span class="typewrite-font"> &gt;</span></li>
+            <li><span class="sans-serif"> As usual, type</span><span
+                class="typewrite-font"> library(Rcmdr)</span><span
+                class="sans-serif"> at the R prompt and press the <em>enter</em>
+                key.</span></li>
+            <li class="sans-serif">After you exit from the R Commander,
+              you can safely close the terminal window, whether or not
+              you have exited from R.</li>
+          </ul>
+        </ul>
+        <blockquote>
+          <p class="sans-serif">(3) You can prevent your computer from
+            napping when R.app is running, even if it's not visible, by
+            right-clicking (or control-clicking) on R.app in the
+            Applications folder in the Finder, and selecting Get Info
+            from the context menu. Check the box next to Prevent App
+            Nap. The change is permanent until you reverse it by
+            unchecking the box. This solution only works with the
+            snowleopard build of R.app.</p>
+          <p class="sans-serif">(4) Enter the following command in a Mac
+            terminal window at the Unix command prompt:</p>
+          <p class="typewriterFont">defaults write org.R-project.R
+            NSAppSleepDisabled -bool YES</p>
+          <p class="sans-serif">This is the manual equivalent of
+            solution (1), and is permanent until reversed.</p>
+        </blockquote>
+      </li>
+    </ul>
+    <h3 class="sans-serif-blue">macOS Trouble-shooting</h3>
+    <p><span style="font-family: Helvetica,Arial,sans-serif;">As part of
+        the installation process, XQuartz builds a font cache.
+        Occasionally, the font cache isn't built on installation, and
+        instead the cache is built when the R Commander (and hence
+        XQuartz) is first used. This process can be time-consuming and
+        may initially slow down the performance of the R Commander
+        (with, e.g., dialog boxes taking a long time to display); if
+        this problem occurs, please be patient -- the problem should
+        resolve itself after the font cache is built.</span></p>
+    <p><span class="sans-serif">If you are using macOS 10.9
+        ("Mavericks") or later and the R Commander becomes slow or
+        unresponsive during a session, you can run R and the R Commander
+        in a terminal window on your Mac rather than from R.app or
+        prevent your computer from "napping" while R.app is running. See
+        "Suppressing app nap" in the installation notes above.</span></p>
+    <p><span style="font-family: Helvetica,Arial,sans-serif;">Occasionally,
+the
+        <strong>Rcmdr</strong> package will fail to load properly
+        in macOS. When this problem occurs, the cause is almost always
+        the failure of the <strong>tcltk</strong> package to load --The
+        <strong>Rcmdr</strong> package depends on the <strong>tcltk</strong>
+        package. You can confirm this diagnosis by trying to load the <strong>tcltk</strong>
+        package directly, in a fresh R session, issuing the command <span
+          style="font-family: monospace;">library(tcltk)</span>at the R
+        command prompt.</span></p>
+    <ul>
+      <li><span style="font-family: Helvetica,Arial,sans-serif;">If you
+          are running R version 3.1.2, the <strong>tcltk</strong>
+          package may fail to load with a message like the following.
+          This is due to a bug in R 3.1.2, which assumes that the <em>otool</em>
+          utility is installed on your system, and which fails if it is
+          not. The simplest fix is to install a newer version of R.</span></li>
+      <blockquote>
+        <p class="typewrite-font">Error : .onLoad failed in
+          loadNamespace() for 'tcltk', details:<br>
+          call: system2("otool", c("-L", shQuote(DLL)), stdout = TRUE)<br>
+          error: error in running command<br>
+          Error: package or namespace load failed for ‘tcltk’<br>
+          sh: otool: command not found </p>
+      </blockquote>
+      <li><span style="font-family: Helvetica,Arial,sans-serif;">If the
+          <strong>tcltk</strong> package fails to load with a message
+          like the following, then your system has an old version of
+          X-Windows that is incompatible with the version of Tcl/Tk for
+          X-Windows that's distributed with R. The probable solution is
+          to run Mac OS Software Update, as suggested in the steps above
+          -- or just install the current version of XQuartz.</span>
+        <blockquote>
+          <p class="typewrite-font">Error : .onLoad failed in
+            loadNamespace() for 'tcltk', details:<br>
+            &nbsp; call: dyn.load(file, DLLpath = DLLpath, ...)<br>
+            &nbsp; error: unable to load shared object<br>
+'/Library/Frameworks/R.framework/Versions/3.0/Resources/library/tcltk/libs/tcltk.so':</p>
+          <p class="typewrite-font">dlopen(/Library/Frameworks/R.framework/Versions/3.0/Resources/library/tcltk/libs/tcltk.so,<br>
+            10): Library not loaded: /usr/X11/lib/libfreetype.6.dylib<br>
+            &nbsp; Referenced from: /usr/local/lib/libtk8.6.dylib<br>
+            &nbsp;&nbsp; Reason: Incompatible library version:
+            libtk8.6.dylib requires version<br>
+            14.0.0 or later, but libfreetype.6.dylib provides version
+            13.0.0</p>
+        </blockquote>
+      </li>
+      <li><span style="font-family: Helvetica,Arial,sans-serif;">If the
+          <strong>tcltk</strong> package fails to load with a message
+          like the following, then your system has inappropriate file
+          permissions set for the /usr/local directory or a subdirectory
+          of it, probably by misbehaving software. </span>
+        <blockquote>
+          <p class="typewrite-font">Error : .onLoad failed in
+            loadNamespace() for 'tcltk', details:<br>
+            &nbsp; call: dyn.load(file, DLLpath = DLLpath, ...)<br>
+            &nbsp; error: unable to load shared object<br>
+'/Library/Frameworks/R.framework/Versions/3.0/Resources/library/tcltk/libs/<br>
+            tcltk.so':<br>
+            &nbsp; <br>
+dlopen(/Library/Frameworks/R.framework/Versions/3.0/Resources/library/tcltk<br>
+            /libs/tcltk.so, 10): Library not loaded:
+            /usr/local/lib/libtcl8.6.dylib<br>
+            &nbsp; Referenced from: <br>
+/Library/Frameworks/R.framework/Versions/3.0/Resources/library/tcltk/libs/t<br>
+            cltk.so<br>
+            &nbsp; Reason: no suitable image found.&nbsp; Did find:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; /usr/local/lib/libtcl8.6.dylib:
+            stat() failed with errno=13<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; /usr/local/lib/libtcl8.6.dylib:
+            stat() failed with errno=13<br>
+          </p>
+        </blockquote>
+      </li>
+    </ul>
+    <blockquote>
+      <p class="sans-serif">You can verify the source of this problem by
+        issuing the following command at the R command prompt:</p>
+      <p class="typewrite-font">system("ls -ld /usr/local /usr/local/lib
+        /usr/local/lib/libtcl*")</p>
+      <p class="sans-serif">If there is a file-permissions problem, you
+        should see something like</p>
+      <blockquote>
+        <p class="typewrite-font">ls: /usr/local/lib: Permission denied<br>
+          ls: /usr/local/lib/libtcl*: Permission denied<br>
+          drwx------&nbsp; 8 root&nbsp; wheel&nbsp; 272 Sep 24 10:21
+          /usr/local</p>
+      </blockquote>
+      <p class="sans-serif">Having confirmed the problem, you<span
+          style="font-family: Helvetica,Arial,sans-serif;"> can change
+          the file permissions in /usr/local by opening a terminal
+          window on your Mac (Terminal.app is in the Applications
+          Utilities folder), and entering the following command at the $
+          prompt in the terminal window:</span> </p>
+    </blockquote>
+    <ul>
+      <blockquote>
+        <p class="typewrite-font">sudo chmod -R a+rX /usr/local</p>
+      </blockquote>
+    </ul>
+    <blockquote>
+      <p class="sans-serif">The operating system will ask you to supply
+        your password to execute this command.</p>
+    </blockquote>
+    <h2 class="sans-serif-blue">Installing Optional Pandoc and LaTeX
+      Software</h2>
+    <p class="sans-serif">Installing R and the Rcmdr package is
+      sufficient for creating HTML (web page) reports via the R Markdown
+      document that the R Commander builds for each session, but if you
+      prefer to create editable Word or Open Office documents or PDF
+      files for reports, you will have additionally to install&nbsp;<a
+        href="http://pandoc.org/installing.html">Pandoc</a>&nbsp;and
+      LaTeX (the latter, in conjunction with Pandoc, for PDF reports).
+      The most convenient way to do this is via the R Commander&nbsp;<em>Tools
+&gt;
+        Install auxiliary software&nbsp;</em>menu (which appears
+      only if Pandoc or LaTeX is absent).</p>
+    <hr>
+    <p class="sans-serif"><i>Last modified: 2023-03-19 by John Fox</i>
+      &lt;<a href="mailto:john.david.fox@proton.me"
+        moz-do-not-send="true">john.david.fox AT proton.me</a>&gt;.</p>
+    <p>&nbsp;</p>
+  </body>
+</html>
