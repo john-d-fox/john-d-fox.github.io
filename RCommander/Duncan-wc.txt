@@ -1,0 +1,7 @@
+type income education prestige
+reporter wc 67 87 52
+conductor wc 76 34 38
+bookkeeper wc 29 72 39
+mail.carrier wc 48 55 34
+insurance.agent wc 55 71 41
+store.clerk wc 29 50 16

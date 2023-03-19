@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Regression Diagnostics 2nd Edition</title>
+    <style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+a img { 
+	border: none;
+}
+
+a:link {
+	color: #000;
+	text-decoration: underline; 
+}
+a:visited {
+	color: #333;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+.container {
+	width: auto;
+	background: #FFF; 
+	color: #000;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+.header {
+	background-color: #CFC;
+	color: #000;
+}
+.color-dark-blue {
+	color: #009;
+}
+
+.content {
+	padding: 10px 0;
+	color: #FFF;
+	background-color: #FFF;
+}
+
+.footer {
+	padding: 10px 0;
+	color: #000;
+	background-color: #CFC;
+}
+
+.fltrt { 
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { 
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.dark-purple {
+	color: #5B00B7;
+}
+black-color {
+	color: #000;
+}
+.black-color {
+	color: #000;
+}
+.dark-green-color {
+	color: #063;
+}
+.verdana-font {
+	font-family: Verdana, Geneva, sans-serif;
+}
+blue-font {
+	color: #00F;
+}
+.typewriter-font {
+	font-family: Courier New, Courier, monospace;
+}
+-->
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="color-dark-blue" align="center"><span
+            class="dark-purple"><span class="dark-purple"><span
+                class="dark-green-color"><span class="color-dark-blue">Regression
+
+                  Diagnostics, Second Edition</span></span></span></span></h1>
+        <h2 class="black-color" align="center"><span
+            class="verdana-font">John Fox</span></h2>
+        <h3 class="color-dark-blue" align="center">Sage Publications
+          (2020) </h3>
+        <p align="center">&nbsp;</p>
+        <div style="text-align: left;"><span style="font-weight: bold;"></span>
+          <!-- end .header --></div>
+      </div>
+      <div class="content">
+        <div align="center">
+          <table width="1082" border="0">
+            <tbody>
+              <tr>
+                <td width="767" valign="middle" align="left">
+                  <div align="left">
+                    <table width="1082" border="0">
+                      <tbody>
+                        <tr>
+                          <td width="291" valign="top"><img
+                              src="regression-diagnostics-cover.jpg"
+                              alt="Regression Diagnostics cover image"
+                              width="291" height="450" border="5"></td>
+                          <td width="10" valign="top">&nbsp;</td>
+                          <td width="767" valign="top" align="left">
+                            <h3 class="black-color" align="left"><a
+href="https://us.sagepub.com/en-us/nam/regression-diagnostics/book269026">Buy
+
+                                the Book From Sage</a></h3>
+                            <h3 class="black-color" align="left"><a
+                                href="errata.pdf">Errata</a> (3 items)</h3>
+                            <table width="542" border="0">
+                              <tbody>
+                                <tr>
+                                  <td colspan="2">
+                                    <h2 class="color-dark-blue"
+                                      align="left">Downloads</h2>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <h3><span class="black-color"> R
+                                        Scripts by Chapter</span></h3>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="117">
+                                    <div align="left"> <a href="ch-1.R"><span
+                                          class="black-color">ch-1.R</span></a></div>
+                                  </td>
+                                  <td class="black-color" width="508">Introduction</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-2.R"><span
+                                          class="black-color">ch-2.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">The
+                                      Linear Regression Model: Review</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-3.R"><span
+                                          class="black-color">ch-3.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Examining
+
+                                      and Transforming Regression Data</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-4.R"><span
+                                          class="black-color">ch-4.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Unusual
+                                      Data</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-5.R"><span
+                                          class="black-color">ch-5.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Non-Normality
+
+                                      and Nonconstant Error Variance</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-6.R"><span
+                                          class="black-color">ch-6.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Nonlinearity</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-7.R"><span
+                                          class="black-color">ch-7.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Collinearity</span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="left"> <a href="ch-8.R"><span
+                                          class="black-color">ch-8.R</span></a></div>
+                                  </td>
+                                  <td><span class="black-color">Diagnostics
+
+                                      for Generalized Linear Models</span></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" valign="top">
+                                    <p class="black-color"><em><em><strong>Note:</strong></em>
+                                        R commands for graphs reproduce
+                                        the figures in the text and many
+                                        can be simplified to draw basic
+                                        versions of the graphs.</em></p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div align="left"></div>
+                            <div align="center"></div>
+                            <div align="left">
+                              <table width="715" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td colspan="2">
+                                      <h3 class="black-color">Data Files</h3>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="black-color"><a
+                                        href="Anscombe.txt">Anscombe.txt</a></td>
+                                    <td class="black-color">Anscombe's
+                                      Quartet</td>
+                                  </tr>
+                                  <tr>
+                                    <td width="123"><a href="CIA.txt"><span
+                                          class="black-color">CIA.txt</span></a></td>
+                                    <td class="black-color" width="582">CIA
+
+                                      World Factbook data</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="Davis.txt"><span
+                                          class="black-color">Davis.txt</span></a></td>
+                                    <td><span class="black-color">Davis's
+
+                                        data on measured and reported
+                                        height and weight</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="Duncan.txt"><span
+                                          class="black-color">Duncan.txt</span></a></td>
+                                    <td><span class="black-color">Duncan's
+
+                                        occupational-prestige data</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="GSS.txt"><span
+                                          class="black-color">GSS.txt</span></a></td>
+                                    <td><span class="black-color">General
+
+                                        Social Survey vocabulary data</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="Mroz.txt"><span
+                                          class="black-color">Mroz.txt</span></a></td>
+                                    <td><span class="black-color">Mroz's
+                                        data on women's labor-force
+                                        participation</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div align="center"></div>
+        <div align="center"></div>
+      </div>
+      <div class="footer">
+        <blockquote>
+          <p class="footer" align="center">last modified: 2022<span
+              class="black-color">-06-29</span> by John Fox &lt;<a
+              href="mailto:jfox@mcmaster.ca">jfox AT mcmaster DOT ca</a>&gt;</p>
+        </blockquote>
+      </div>
+      <!-- end .container --></div>
+  </body>
+</html>
